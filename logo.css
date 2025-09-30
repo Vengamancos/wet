@@ -1,0 +1,83 @@
+body{
+    background: #F4C09D;
+    text-align: center;
+    justify-content: center;
+}
+
+.Bienvenida{
+  font-size: 100px;
+  font-weight: bold;
+  animation: letraskey 8s infinite;
+  font-style: italic;
+  text-shadow: 8px 8px 10px rgb(0, 0, 0, 1);
+ 
+  
+}
+
+
+@keyframes letraskey{
+    0%{color: Beige;}
+    25%{color: gray}
+    50%{color: #79551c;}
+    75%{color: gray;}
+    100%{color: Beige;}
+}
+
+.logo{
+    margin-top: -50px;
+    border-radius: 40px;
+    animation: logoAnimacion 2.7s;
+    width: 230px;
+    height: 230px;
+}
+
+@keyframes logoAnimacion{
+    0%{margin-left: -2000px;}
+    100%{margin-left: 0px;}
+}
+
+.logo:hover{
+box-shadow: 0px 0px 15px 5px rgb(255, 255, 255);
+width: 250px;
+height: 250px;
+transform: rotate(-2deg);
+}
+
+html {
+  height:100%;
+}
+
+body {
+  margin:0;
+}
+
+.bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #c97377 50%, #723e41 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}

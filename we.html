@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Menú Interactivo</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f8f8f8;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .plato {
+      width: 150px;
+      height: 150px;
+      background: #fff;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .plato.seleccionado {
+      border-color: #28a745;
+      transform: scale(1.05);
+      background: #e6ffe6;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Menú Interactivo</h1>
+  <div class="menu">
+    <div class="plato" data-nombre="Tamal">Tamal</div>
+    <div class="plato" data-nombre="Pupusa">Pupusa</div>
+    <div class="plato" data-nombre="Yuca Frita">Yuca Frita</div>
+    <div class="plato" data-nombre="Empanada">Empanada</div>
+    <div class="plato" data-nombre="Sopa de Res">Sopa de Res</div>
+  </div>
+
+  <script>
+    const platos = document.querySelectorAll('.plato');
+    let presionado = false;
+
+    platos.forEach(plato => {
+      plato.addEventListener('mousedown', () => {
+        presionado = true;
+        setTimeout(() => {
+          if (presionado) {
+            plato.classList.toggle('seleccionado');
+          }
+        }, 500); // medio segundo de presión
+      });
+
+      plato.addEventListener('mouseup', () => {
+        presionado = false;
+      });
+
+      plato.addEventListener('mouseleave', () => {
+        presionado = false;
+      });
+    });
+  </script>
+
+</body>
+</html>
+
